@@ -8,7 +8,7 @@ console.log('Main.jsx: Initializing React root...');
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-        <BrowserRouter>
+        <BrowserRouter basename="/digital_communication">
             <App />
         </BrowserRouter>
     </React.StrictMode>,
