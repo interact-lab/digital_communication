@@ -103,6 +103,10 @@ export default function ConvolutionSimulation() {
 
         // Labels
         ctx.fillStyle = '#9ca3af';
+        ctx.font = 'bold 10px Inter';
+        ctx.fillText('Amplitude', 10, originY - 140);
+        ctx.fillText('τ (Time)', width - 50, originY + 15);
+
         ctx.font = '12px Inter';
         ctx.fillText('x(τ)', originX + 2.2 * scale, originY - 10);
         ctx.fillStyle = '#3b82f6';

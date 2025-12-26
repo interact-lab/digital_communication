@@ -37,7 +37,8 @@ export default function PNSequence() {
 
             <div className="flex-1 space-y-12 flex flex-col justify-center">
                 {/* LFSR Visualization */}
-                <div className="flex items-center justify-center space-x-4">
+                <div className="flex items-center justify-center space-x-4 relative">
+                    <div className="absolute top-[-40px] left-1/2 -translate-x-1/2 text-[8px] font-black text-orange-500/40 uppercase tracking-[0.5em]">Feedback Topology</div>
                     {register.map((val, i) => (
                         <div key={i} className="relative">
                             <motion.div
@@ -47,7 +48,7 @@ export default function PNSequence() {
                                 {val}
                             </motion.div>
                             <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[8px] font-bold text-gray-600 uppercase">
-                                Flip-Flop {i}
+                                Reg stage {i}
                             </div>
                             {i < 3 && (
                                 <div className="absolute -right-4 top-1/2 -translate-y-1/2 text-gray-700">→</div>
@@ -56,7 +57,7 @@ export default function PNSequence() {
                     ))}
                     <div className="pl-8 flex flex-col items-center">
                         <div className="w-8 h-8 rounded-full border border-orange-500/50 flex items-center justify-center text-orange-500 font-black text-xs">⊕</div>
-                        <div className="text-[7px] text-gray-600 font-bold uppercase mt-2">XOR Taps</div>
+                        <div className="text-[7px] text-gray-600 font-bold uppercase mt-2">Modulo-2 Sum</div>
                     </div>
                 </div>
 

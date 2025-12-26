@@ -25,8 +25,9 @@ export default function PulseShaping() {
         <div className="bg-black/40 rounded-3xl border border-white/10 p-8 h-full flex flex-col">
             <div className="grid md:grid-cols-2 gap-8 mb-8">
                 <div className="space-y-4">
-                    <h4 className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Time Domain Impulse Response $p(t)$</h4>
-                    <div className="h-48 bg-black/20 rounded-2xl border border-white/5 p-4">
+                    <h4 className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Time Domain Impulse Response $p(t)$</h4>
+                    <div className="h-48 bg-black/20 rounded-2xl border border-white/5 p-4 relative">
+                        <div className="absolute left-1 top-1/2 -rotate-90 text-[7px] text-gray-700 uppercase font-black">Amplitude</div>
                         <svg width="100%" height="100%" viewBox="0 0 100 40" preserveAspectRatio="none">
                             <line x1="0" y1="35" x2="100" y2="35" stroke="white" strokeOpacity="0.1" strokeWidth="0.5" />
                             <line x1="50" y1="0" x2="50" y2="40" stroke="white" strokeOpacity="0.1" strokeWidth="0.5" />
@@ -35,12 +36,14 @@ export default function PulseShaping() {
                                 stroke="#f97316" fill="none" strokeWidth="1"
                             />
                         </svg>
+                        <div className="absolute bottom-1 left-1/2 -translate-x-1/2 text-[7px] text-gray-700 uppercase font-black">Time (t/T)</div>
                     </div>
                 </div>
 
                 <div className="space-y-4">
-                    <h4 className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Spectral Occupancy $P(f)$</h4>
-                    <div className="h-48 bg-black/20 rounded-2xl border border-white/5 p-4">
+                    <h4 className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Spectral Occupancy $P(f)$</h4>
+                    <div className="h-48 bg-black/20 rounded-2xl border border-white/5 p-4 relative">
+                        <div className="absolute left-1 top-1/2 -rotate-90 text-[7px] text-gray-700 uppercase font-black">Magnitude</div>
                         <svg width="100%" height="100%" viewBox="0 0 100 40" preserveAspectRatio="none">
                             <line x1="0" y1="35" x2="100" y2="35" stroke="white" strokeOpacity="0.1" strokeWidth="0.5" />
                             {/* Rough spectral shape of Raised Cosine */}
@@ -50,6 +53,7 @@ export default function PulseShaping() {
                                 style={{ strokeDasharray: 200, strokeDashoffset: -rollOff * 50 }}
                             />
                         </svg>
+                        <div className="absolute bottom-1 left-1/2 -translate-x-1/2 text-[7px] text-gray-700 uppercase font-black">Frequency (f)</div>
                     </div>
                 </div>
             </div>

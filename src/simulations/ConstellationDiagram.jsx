@@ -64,8 +64,8 @@ export default function ConstellationDiagram() {
                     ))}
 
                     {/* Labels */}
-                    <text x="1.2" y="0.1" fontSize="0.1" fill="gray" fontWeight="bold">I</text>
-                    <text x="0.1" y="-1.3" fontSize="0.1" fill="gray" fontWeight="bold">Q</text>
+                    <text x="0.8" y="0.1" fontSize="0.08" fill="#4b5563" fontWeight="bold">In-Phase (I)</text>
+                    <text x="0.1" y="-1.3" fontSize="0.08" fill="#4b5563" fontWeight="bold" transform="rotate(90, 0.1, -1.3)">Quadrature (Q)</text>
                 </svg>
             </div>
 

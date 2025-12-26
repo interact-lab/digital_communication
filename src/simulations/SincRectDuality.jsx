@@ -45,10 +45,12 @@ export default function SincRectDuality() {
                 <div className="space-y-4">
                     <h4 className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.3em] text-center">Time Domain $x(t)$</h4>
                     <div className="h-40 relative">
+                        <div className="absolute left-1 top-1/2 -rotate-90 text-[7px] text-gray-700 uppercase font-black">Level</div>
                         <svg width="100%" height="100%" viewBox="-5 -1.2 10 2.4" preserveAspectRatio="none">
                             <line x1="-5" y1="0" x2="5" y2="0" stroke="white" strokeOpacity="0.1" strokeWidth="0.05" />
                             <path d={`M ${data.timePts.map(p => `${p.x},${-p.y}`).join(' L ')}`} stroke="#f97316" fill="none" strokeWidth="0.1" />
                         </svg>
+                        <div className="absolute bottom-1 left-1/2 -translate-x-1/2 text-[7px] text-gray-700 uppercase font-black">Time (t)</div>
                     </div>
                     <p className="text-center text-[10px] text-gray-600 font-mono italic">{isRectTime ? "Rectangular Pulse" : "Sinc Function"}</p>
                 </div>
@@ -56,10 +58,12 @@ export default function SincRectDuality() {
                 <div className="space-y-4">
                     <h4 className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.3em] text-center">Frequency Domain $X(f)$</h4>
                     <div className="h-40 relative">
+                        <div className="absolute left-1 top-1/2 -rotate-90 text-[7px] text-gray-700 uppercase font-black">Magnitude</div>
                         <svg width="100%" height="100%" viewBox="-5 -1.2 10 2.4" preserveAspectRatio="none">
                             <line x1="-5" y1="0" x2="5" y2="0" stroke="white" strokeOpacity="0.1" strokeWidth="0.05" />
                             <path d={`M ${data.freqPts.map(p => `${p.x},${-p.y}`).join(' L ')}`} stroke="#3b82f6" fill="none" strokeWidth="0.1" />
                         </svg>
+                        <div className="absolute bottom-1 left-1/2 -translate-x-1/2 text-[7px] text-gray-700 uppercase font-black">Frequency (f)</div>
                     </div>
                     <p className="text-center text-[10px] text-gray-600 font-mono italic">{isRectTime ? "Sinc Function" : "Rectangular Pulse"}</p>
                 </div>

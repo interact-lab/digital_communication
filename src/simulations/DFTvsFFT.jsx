@@ -26,8 +26,8 @@ export default function DFTvsFFT() {
                                     />
                                 ))
                             ))}
-                            <rect x="0" y="0" width="100" height="2" fill="#ea580c" />
-                            <rect x="0" y="98" width="100" height="2" fill="#ea580c" />
+                            <text x="50" y="5" textAnchor="middle" fontSize="4" fill="#9ca3af" fontWeight="bold">Input x[n]</text>
+                            <text x="50" y="98" textAnchor="middle" fontSize="4" fill="#9ca3af" fontWeight="bold">Output X[k]</text>
                         </svg>
                         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                             <div className="text-4xl font-black text-white/10 italic">N²</div>
@@ -58,6 +58,8 @@ export default function DFTvsFFT() {
                                     />
                                 ))
                             })}
+                            <text x="5" y="50" textAnchor="start" fontSize="4" fill="#9ca3af" fontWeight="bold" transform="rotate(-90, 5, 50)">Input x[n]</text>
+                            <text x="95" y="50" textAnchor="start" fontSize="4" fill="#9ca3af" fontWeight="bold" transform="rotate(-90, 95, 50)">Output X[k]</text>
                         </svg>
                         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                             <div className="text-4xl font-black text-white/10 italic">N log N</div>

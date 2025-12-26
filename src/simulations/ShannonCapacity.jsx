@@ -45,15 +45,19 @@ export default function ShannonCapacity() {
                 <div className="bg-black/20 rounded-3xl border border-white/5 p-8 relative overflow-hidden flex flex-col justify-center">
                     <div className="absolute inset-0 bg-orange-600/5 blur-[100px] pointer-events-none" />
                     <div className="relative text-center space-y-2">
-                        <div className="text-[8px] font-bold text-gray-600 uppercase tracking-[0.3em]">Channel Reliability</div>
+                        <div className="text-[8px] font-bold text-gray-600 uppercase tracking-[0.3em]">Relative Throughput (Mbps)</div>
                         <div className="text-lg font-black text-gray-400">
                             {snrDb < 0 ? 'Extremely Noisy' : snrDb < 15 ? 'Moderate Noise' : 'Clean Channel'}
                         </div>
-                        <div className="mt-8 h-1 w-full bg-white/5 rounded-full overflow-hidden">
+                        <div className="mt-8 h-1 w-full bg-white/5 rounded-full overflow-hidden relative">
                             <motion.div
                                 className="h-full bg-orange-500 shadow-[0_0_15px_rgba(249,115,22,0.5)]"
                                 animate={{ width: `${Math.min(100, (capacity / 500) * 100)}%` }}
                             />
+                        </div>
+                        <div className="flex justify-between text-[7px] text-gray-700 font-bold uppercase mt-2">
+                            <span>0 Mbps</span>
+                            <span>Theoretical Limit (500 Mbps Scale)</span>
                         </div>
                     </div>
                 </div>

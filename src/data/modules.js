@@ -2,7 +2,7 @@ export const modules = [
     {
         id: 'fourier-analysis',
         title: 'Fourier Analysis and Transforms',
-        description: 'Deep dive into the mathematical foundations of signal analysis.',
+        description: 'Exploring the mathematical bridge between time and frequency domains using Fourier methods.',
         topics: [
             {
                 id: 'complex-vector',
@@ -76,7 +76,7 @@ export const modules = [
     {
         id: 'signal-transmission',
         title: 'Signal Transmission and Digitization',
-        description: 'From analog waves to digital communication pipelines.',
+        description: 'Examining the complete pipeline from analog waveform sampling to robust digital bitstreams.',
         topics: [
             {
                 id: 'pcm-pipeline',
@@ -108,7 +108,7 @@ export const modules = [
     {
         id: 'information-theory',
         title: 'Information Theory and Coding',
-        description: 'The mathematical limits of communication and data protection.',
+        description: 'Quantifying information entropy and developing codes that approach the Shannon capacity limit.',
         topics: [
             {
                 id: 'entropy-source-coding',
@@ -135,7 +135,7 @@ export const modules = [
     {
         id: 'multiple-access',
         title: 'Multiple Access Techniques',
-        description: 'Resource sharing strategies for multi-user environments.',
+        description: 'Allocating finite spectral resources among multiple users via frequency, time, and code division.',
         topics: [
             {
                 id: 'fdma-tdma-cdma',
@@ -146,13 +146,18 @@ export const modules = [
                 id: 'orthogonality',
                 title: 'Orthogonality in Multi-user Channels',
                 description: 'Mathematical proof of signal separation via vectors.'
+            },
+            {
+                id: 'aloha-csma',
+                title: 'Random Access: ALOHA and CSMA',
+                description: 'Packet collisions and carrier sensing protocols in shared media.'
             }
         ]
     },
     {
         id: 'spread-spectrum',
         title: 'Spread Spectrum Communications',
-        description: 'Security and interference avoidance through bandwidth expansion.',
+        description: 'Applying wideband modulation for interference rejection, security, and precise ranging applications.',
         topics: [
             {
                 id: 'dsss',

@@ -24,6 +24,7 @@ import Orthogonality from './Orthogonality';
 import FHSSSimulation from './FHSS';
 import PNSequence from './PNSequence';
 import SincRectDuality from './SincRectDuality';
+import AlohaCSMA from './AlohaCSMA';
 
 export const simulations = {
     'complex-vector': EulersHelix,
@@ -52,4 +53,5 @@ export const simulations = {
     'fhss': FHSSSimulation,
     'pn-sequence': PNSequence,
     'sinc-rect-duality': SincRectDuality,
+    'aloha-csma': AlohaCSMA,
 };

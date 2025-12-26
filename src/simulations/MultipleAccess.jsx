@@ -27,11 +27,12 @@ export default function MultipleAccess() {
 
             <div className="flex-1 min-h-[400px] relative bg-black/20 rounded-2xl overflow-hidden border border-white/5 p-8">
                 <div className="grid grid-cols-[auto_1fr] h-full gap-4">
-                    <div className="flex flex-col justify-between py-10">
-                        <span className="text-[10px] font-bold text-gray-600 uppercase vertical-text">Frequency</span>
+                    <div className="flex flex-col justify-between py-10 relative">
+                        <span className="text-[10px] font-black text-gray-700 uppercase vertical-text absolute -left-6 top-1/2 -translate-y-1/2 -rotate-90 origin-center whitespace-nowrap">Frequency Band (Hz)</span>
                     </div>
                     <div className="flex flex-col h-full border-l border-b border-white/10">
                         <div className="flex-1 relative">
+                            {/* ... existing modes ... */}
                             {mode === 'fdma' && (
                                 <div className="absolute inset-0 grid grid-rows-4 gap-2">
                                     {users.map((user, i) => (
@@ -82,15 +83,15 @@ export default function MultipleAccess() {
                                         ))}
                                         <div className="absolute inset-0 flex items-center justify-center">
                                             <div className="bg-black/80 px-4 py-2 rounded-xl border border-white/10 text-[10px] font-black tracking-widest text-orange-500 uppercase">
-                                                Shared Channel (Coded Separation)
+                                                Coded Channel (Spread Spectrum)
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             )}
                         </div>
-                        <div className="h-8 flex justify-between px-4 mt-2">
-                            <span className="text-[10px] font-bold text-gray-600 uppercase tracking-widest">Time</span>
+                        <div className="h-8 flex justify-center items-center mt-2">
+                            <span className="text-[10px] font-black text-gray-700 uppercase tracking-[0.4em]">Temporal Slots (t)</span>
                         </div>
                     </div>
                 </div>

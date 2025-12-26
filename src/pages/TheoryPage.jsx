@@ -5,6 +5,9 @@ import { theoryContent } from '../data/theoryContent';
 import { ArrowLeft, Lightbulb, Code, Target, Info, ChevronDown, ExternalLink, Bookmark } from 'lucide-react';
 import { simulations } from '../simulations';
 import { useState } from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 export default function TheoryPage() {
     const { topicId } = useParams();
@@ -49,8 +52,16 @@ export default function TheoryPage() {
                 </Link>
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
                     <div>
-                        <h1 className="text-3xl md:text-5xl font-black tracking-tight text-white mb-2">{content.title}</h1>
-                        <p className="text-gray-400 max-w-2xl text-sm md:text-base">{content.description}</p>
+                        <h1 className="text-3xl md:text-5xl font-black tracking-tight text-white mb-2">
+                            <ReactMarkdown components={{ p: ({ children }) => <>{children}</> }} remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]}>
+                                {content.title}
+                            </ReactMarkdown>
+                        </h1>
+                        <div className="text-gray-400 max-w-2xl text-sm md:text-base">
+                            <ReactMarkdown components={{ p: ({ children }) => <>{children}</> }} remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]}>
+                                {content.description}
+                            </ReactMarkdown>
+                        </div>
                     </div>
                     <button
                         onClick={() => setIsTheoryOpen(!isTheoryOpen)}
@@ -80,8 +91,13 @@ export default function TheoryPage() {
                                         </div>
                                         <h2 className="text-lg font-bold text-white uppercase tracking-wider">Historical & Mathematical Context</h2>
                                     </div>
-                                    <div className="text-gray-400 leading-relaxed text-sm bg-black/20 p-6 rounded-2xl border border-white/5">
-                                        {content.theory}
+                                    <div className="prose prose-invert max-w-none text-gray-400 leading-relaxed text-sm bg-black/20 p-6 rounded-2xl border border-white/5">
+                                        <ReactMarkdown
+                                            remarkPlugins={[remarkMath]}
+                                            rehypePlugins={[rehypeKatex]}
+                                        >
+                                            {content.theory}
+                                        </ReactMarkdown>
                                     </div>
                                 </section>
 
@@ -96,7 +112,11 @@ export default function TheoryPage() {
                                         {content.requirements.map((req, i) => (
                                             <div key={i} className="flex items-start space-x-3 p-4 rounded-xl bg-black/20 border border-white/5 text-xs text-gray-400">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-orange-500 mt-1.5 flex-shrink-0" />
-                                                <span>{req}</span>
+                                                <div>
+                                                    <ReactMarkdown components={{ p: ({ children }) => <>{children}</> }} remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]}>
+                                                        {req}
+                                                    </ReactMarkdown>
+                                                </div>
                                             </div>
                                         ))}
                                     </div>

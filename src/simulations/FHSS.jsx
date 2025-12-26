@@ -31,8 +31,9 @@ export default function FHSSSimulation() {
                 </button>
             </div>
 
-            <div className="flex-1 bg-black/20 rounded-2xl border border-white/5 p-8 grid grid-cols-[auto_1fr] md:gap-8 overflow-hidden">
-                <div className="flex flex-col justify-between py-4 text-[9px] font-black text-gray-600 uppercase tracking-widest h-full">
+            <div className="flex-1 bg-black/20 rounded-2xl border border-white/5 p-8 grid grid-cols-[auto_1fr] md:gap-8 overflow-hidden relative">
+                <div className="absolute left-1 top-1/2 -rotate-90 text-[8px] font-black text-gray-700 uppercase tracking-widest origin-center">Frequency Channels</div>
+                <div className="flex flex-col justify-between py-4 text-[9px] font-black text-gray-600 uppercase tracking-widest h-full ml-4">
                     {[7, 6, 5, 4, 3, 2, 1, 0].map(i => <span key={i}>CH {i + 1}</span>)}
                 </div>
 
@@ -67,6 +68,7 @@ export default function FHSSSimulation() {
                         </AnimatePresence>
                     </div>
                 </div>
+                <div className="absolute bottom-2 right-8 text-[8px] font-black text-gray-700 uppercase tracking-widest">Waterfall Time (t) →</div>
             </div>
 
             <div className="mt-8 bg-white/5 p-6 rounded-2xl border border-white/5">

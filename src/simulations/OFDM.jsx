@@ -46,6 +46,11 @@ export default function OFDMSimulation() {
             </div>
 
             <div className="h-64 bg-black/20 rounded-2xl relative border border-white/5 p-4 mb-8">
+                {/* Y-Axis Label */}
+                <div className="absolute left-1 top-1/2 -rotate-90 origin-left -translate-y-1/2 text-[10px] text-gray-600 font-mono font-bold uppercase tracking-widest pointer-events-none">
+                    Power Spectral Density
+                </div>
+
                 <svg width="100%" height="100%" viewBox="0 0 500 200" preserveAspectRatio="none">
                     {/* Guidelines */}
                     <line x1="0" y1="180" x2="500" y2="180" stroke="white" strokeOpacity="0.1" />
@@ -69,7 +74,7 @@ export default function OFDMSimulation() {
                         strokeWidth="3"
                     />
                 </svg>
-                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 text-[10px] text-gray-600 font-mono">
+                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 text-[10px] text-gray-500 font-mono font-bold uppercase tracking-widest">
                     Frequency (Hz) →
                 </div>
             </div>

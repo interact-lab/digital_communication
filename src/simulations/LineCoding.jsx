@@ -46,6 +46,7 @@ export default function LineCoding() {
                 </div>
 
                 <div className="h-40 relative">
+                    <div className="absolute left-[-30px] top-1/2 -rotate-90 text-[8px] font-black text-gray-700 uppercase tracking-widest">Level</div>
                     <svg width="100%" height="100%" viewBox="0 0 100 40" preserveAspectRatio="none">
                         <line x1="0" y1="20" x2="100" y2="20" stroke="white" strokeOpacity="0.1" strokeWidth="0.5" />
                         {Array.from({ length: data.length + 1 }).map((_, i) => (
@@ -53,6 +54,7 @@ export default function LineCoding() {
                         ))}
                         <path d={getPoints()} stroke="#f97316" fill="none" strokeWidth="1.5" strokeLinejoin="round" />
                     </svg>
+                    <div className="absolute bottom-[-10px] left-1/2 -translate-x-1/2 text-[8px] font-black text-gray-700 uppercase tracking-widest">Bit Intervals (T)</div>
                 </div>
             </div>
 

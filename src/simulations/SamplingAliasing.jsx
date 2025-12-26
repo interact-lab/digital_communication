@@ -113,11 +113,23 @@ export default function SamplingAliasing() {
                 min: -1.5,
                 max: 1.5,
                 grid: { color: 'rgba(255,255,255,0.05)' },
-                ticks: { color: '#6b7280' }
+                ticks: { color: '#6b7280' },
+                title: {
+                    display: true,
+                    text: 'AMPLITUDE (V)',
+                    color: '#4b5563',
+                    font: { size: 10, weight: 'bold', family: 'Inter' }
+                }
             },
             x: {
                 grid: { color: 'rgba(255,255,255,0.05)' },
-                ticks: { color: '#6b7280', maxTicksLimit: 10 }
+                ticks: { color: '#6b7280', maxTicksLimit: 10 },
+                title: {
+                    display: true,
+                    text: 'TIME (S)',
+                    color: '#4b5563',
+                    font: { size: 10, weight: 'bold', family: 'Inter' }
+                }
             },
         },
     };

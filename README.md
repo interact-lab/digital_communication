@@ -62,10 +62,11 @@ npm run preview
 
 ## Features
 
-- **Interactive Simulations**: 24+ high-fidelity visualizations covering Sampling Theorem, Convolution, OFDM, FHSS, and more.
-- **Laboratory Perspective**: Focused on research-grade visualizations rather than marketing layouts.
-- **Responsive Layout**: Dynamic sidebar and content mapping for seamless desktop and mobile experiences.
-- **Theoretical Documentation**: In-depth explanations and seminal academic references for every module.
+- **Interactive Simulations**: 24+ high-fidelity visualizations with aggressive labeling (axes, units, components) covering Sampling, Convolution, OFDM, FHSS, etc.
+- **Deep Mathematical Theory**: Comprehensive, academic-grade explanations for every module, bridging equations with physical intuition.
+- **Aggressive Visualization Clarity**: Full 3D coordinate systems (e.g., Euler's Helix) and clearly annotated 2D spectral plots.
+- **Laboratory Perspective**: Focused on research-grade visual fidelity and technical accuracy.
+- **Theoretical Documentation**: In-depth explanations and seminal academic references integrated within the suite.
 
 ## License
 

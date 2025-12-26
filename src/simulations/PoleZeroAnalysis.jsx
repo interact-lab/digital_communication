@@ -76,6 +76,12 @@ export default function PoleZeroAnalysis() {
             ctx.moveTo(px + 6, py - 6); ctx.lineTo(px - 6, py + 6);
             ctx.stroke();
         });
+
+        // Labels
+        ctx.fillStyle = 'rgba(255,255,255,0.4)';
+        ctx.font = 'bold 10px Inter';
+        ctx.fillText('Re', size - 20, center - 10);
+        ctx.fillText('Im', center + 10, 20);
     };
 
     useEffect(() => {
@@ -118,7 +124,7 @@ export default function PoleZeroAnalysis() {
     return (
         <div className="bg-black/40 rounded-3xl border border-white/10 p-8 grid md:grid-cols-2 gap-8">
             <div>
-                <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">Z-Plane (Drag X for Poles, O for Zeros)</h3>
+                <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">Z-Plane Analysis</h3>
                 <canvas
                     ref={canvasRef}
                     width={400} height={400}
@@ -130,17 +136,17 @@ export default function PoleZeroAnalysis() {
                 <div className="flex justify-center space-x-6 mt-4">
                     <div className="flex items-center space-x-2">
                         <div className="w-3 h-3 border-2 border-orange-500 transform rotate-45" />
-                        <span className="text-xs text-gray-400">Poles (X)</span>
+                        <span className="text-xs text-gray-400 font-bold uppercase tracking-tighter">Poles (X)</span>
                     </div>
                     <div className="flex items-center space-x-2">
                         <div className="w-3 h-3 border-2 border-blue-500 rounded-full" />
-                        <span className="text-xs text-gray-400">Zeros (O)</span>
+                        <span className="text-xs text-gray-400 font-bold uppercase tracking-tighter">Zeros (O)</span>
                     </div>
                 </div>
             </div>
 
             <div className="flex flex-col">
-                <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">Frequency Response (Magnitude)</h3>
+                <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">System Intensity Response</h3>
                 <div className="flex-1 min-h-[300px]">
                     <Line
                         data={{
@@ -158,8 +164,16 @@ export default function PoleZeroAnalysis() {
                             maintainAspectRatio: false,
                             plugins: { legend: { display: false } },
                             scales: {
-                                y: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#6b7280' } },
-                                x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#6b7280', maxTicksLimit: 5 } }
+                                y: {
+                                    grid: { color: 'rgba(255,255,255,0.05)' },
+                                    ticks: { color: '#6b7280' },
+                                    title: { display: true, text: 'MAGNITUDE |H(ω)|', color: '#4b5563', font: { size: 10, weight: 'bold' } }
+                                },
+                                x: {
+                                    grid: { color: 'rgba(255,255,255,0.05)' },
+                                    ticks: { color: '#6b7280', maxTicksLimit: 5 },
+                                    title: { display: true, text: 'NORMALIZED FREQUENCY (ω)', color: '#4b5563', font: { size: 10, weight: 'bold' } }
+                                }
                             }
                         }}
                     />

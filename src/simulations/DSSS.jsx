@@ -34,12 +34,14 @@ export default function DSSSSimulation() {
 
                     <div className="h-40 bg-black/20 rounded-2xl border border-white/5 relative overflow-hidden p-4">
                         <h5 className="text-[9px] font-bold text-gray-600 uppercase mb-2">Transmitted Waveform (Spread)</h5>
+                        <div className="absolute left-1 top-1/2 -rotate-90 text-[7px] text-gray-700 uppercase font-black">Level</div>
                         <svg width="100%" height="80%" viewBox="0 0 100 40" preserveAspectRatio="none">
                             <path
                                 d={`M ${spreadSignal.map((s, i) => `${(i / spreadSignal.length) * 100},${20 - s * 15} L ${((i + 1) / spreadSignal.length) * 100},${20 - s * 15}`).join(' ')}`}
                                 stroke="#f97316" fill="none" strokeWidth="1"
                             />
                         </svg>
+                        <div className="absolute bottom-1 left-1/2 -translate-x-1/2 text-[7px] text-gray-700 uppercase font-black">Chip Intervals (Tc)</div>
                     </div>
                 </div>
 
@@ -65,12 +67,14 @@ export default function DSSSSimulation() {
 
                     <div className="h-40 bg-black/20 rounded-2xl border border-white/5 relative overflow-hidden p-4">
                         <h5 className="text-[9px] font-bold text-gray-600 uppercase mb-2">Received with {noise > 0.3 ? 'Heavy' : 'Light'} Noise</h5>
+                        <div className="absolute left-1 top-1/2 -rotate-90 text-[7px] text-gray-700 uppercase font-black">Noisy Level</div>
                         <svg width="100%" height="80%" viewBox="0 0 100 40" preserveAspectRatio="none">
                             <path
                                 d={`M ${noisySignal.map((s, i) => `${(i / noisySignal.length) * 100},${20 - s * 15}`).join(' L ')}`}
                                 stroke="#ffffff" opacity="0.4" fill="none" strokeWidth="0.5"
                             />
                         </svg>
+                        <div className="absolute bottom-1 left-1/2 -translate-x-1/2 text-[7px] text-gray-700 uppercase font-black">Sampling Instant (T)</div>
                     </div>
                 </div>
             </div>

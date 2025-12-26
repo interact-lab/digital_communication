@@ -33,6 +33,7 @@ export default function MatchedFiltering() {
             <div className="grid grid-rows-2 gap-8 mb-8">
                 <div className="bg-black/20 rounded-2xl border border-white/5 p-4 relative">
                     <h4 className="text-[9px] font-bold text-gray-600 uppercase mb-4">Input Signal (Corrupted by Noise)</h4>
+                    <div className="absolute left-1 top-1/2 -rotate-90 text-[7px] text-gray-700 uppercase font-black">Level</div>
                     <div className="h-24">
                         <svg width="100%" height="100%" viewBox="0 -3 15 6" preserveAspectRatio="none">
                             <path d={`M ${noisySignal.map((v, i) => `${i},${-v}`).join(' L ')}`} stroke="white" opacity="0.4" fill="none" strokeWidth="0.1" />
@@ -43,6 +44,7 @@ export default function MatchedFiltering() {
 
                 <div className="bg-black/20 rounded-2xl border border-white/5 p-4 relative">
                     <h4 className="text-[9px] font-bold text-orange-500 uppercase mb-4">Filter Output (Cross-Correlation)</h4>
+                    <div className="absolute left-1 top-1/2 -rotate-90 text-[7px] text-gray-700 uppercase font-black">Score</div>
                     <div className="h-24">
                         <svg width="100%" height="100%" viewBox="0 -1 7 7" preserveAspectRatio="none">
                             <path d={`M ${output.map((v, i) => `${i},${6 - v}`).join(' L ')}`} stroke="#f97316" fill="none" strokeWidth="0.2" />
@@ -50,6 +52,7 @@ export default function MatchedFiltering() {
                             <line x1="0" y1="3" x2="7" y2="3" stroke="#ef4444" strokeWidth="0.1" strokeDasharray="0.1" />
                         </svg>
                     </div>
+                    <div className="absolute bottom-1 left-1/2 -translate-x-1/2 text-[7px] text-gray-700 uppercase font-black">Correlation Lag (τ)</div>
                     <div className="absolute right-4 top-1/2 -translate-y-1/2 text-right">
                         <div className="text-xl font-black text-white">{(Math.max(...output)).toFixed(1)}</div>
                         <div className="text-[8px] text-gray-600 font-bold uppercase">Peak Correlation</div>

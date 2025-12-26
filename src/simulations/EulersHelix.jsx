@@ -88,6 +88,18 @@ export default function EulersHelix() {
                     <pointLight position={[10, 10, 10]} intensity={1} />
                     <gridHelper args={[20, 20, 0x333333, 0x111111]} rotation={[Math.PI / 2, 0, 0]} />
 
+                    {/* Axis Labels */}
+                    <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>
+                        <Text position={[2.5, 0, -5.5]} fontSize={0.4} color="#666">Real Axis (Re)</Text>
+                        <Text position={[0, 2.5, -5.5]} fontSize={0.4} color="#666" rotation={[0, 0, Math.PI / 2]}>Imaginary Axis (Im)</Text>
+                        <Text position={[0, -0.5, 5.5]} fontSize={0.4} color="#f97316">Time Axis (t)</Text>
+                    </Float>
+
+                    {/* Main Axes */}
+                    <Line points={[new THREE.Vector3(-2, 0, -5), new THREE.Vector3(2, 0, -5)]} color="#333" lineWidth={1} />
+                    <Line points={[new THREE.Vector3(0, -2, -5), new THREE.Vector3(0, 2, -5)]} color="#333" lineWidth={1} />
+                    <Line points={[new THREE.Vector3(0, 0, -5), new THREE.Vector3(0, 0, 5)]} color="#f97316" lineWidth={1} />
+
                     <Helix
                         time={time}
                         frequency={frequency}

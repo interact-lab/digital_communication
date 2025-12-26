@@ -53,7 +53,8 @@ export default function EntropySourceCoding() {
                 </div>
 
                 {/* Efficiency Visualization */}
-                <div className="bg-black/20 rounded-3xl border border-white/5 p-8 flex flex-col justify-center text-center">
+                <div className="bg-black/20 rounded-3xl border border-white/5 p-8 flex flex-col justify-center text-center relative overflow-hidden">
+                    <div className="absolute top-4 left-1/2 -translate-x-1/2 text-[8px] font-bold text-gray-700 uppercase tracking-widest">Compression Efficiency</div>
                     <div className="relative inline-block mx-auto mb-6">
                         <svg width="120" height="120" viewBox="0 0 100 100">
                             <circle cx="50" cy="50" r="45" fill="none" stroke="white" strokeOpacity="0.05" strokeWidth="8" />
@@ -66,7 +67,7 @@ export default function EntropySourceCoding() {
                         </svg>
                         <div className="absolute inset-0 flex flex-col items-center justify-center">
                             <span className="text-2xl font-black text-white">{((entropy / 2) * 100).toFixed(0)}%</span>
-                            <span className="text-[7px] text-gray-600 font-bold uppercase">Optimal Ratio</span>
+                            <span className="text-[7px] text-gray-600 font-bold uppercase tracking-widest">Shannon Limit</span>
                         </div>
                     </div>
                     <p className="text-xs text-gray-500 leading-relaxed italic">

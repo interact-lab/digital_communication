@@ -52,8 +52,12 @@ export default function ChromaticDispersion() {
                 </div>
 
                 <div className="mt-12">
-                    <div className="text-[10px] font-bold text-gray-600 uppercase mb-4">Output Pulse (Smearing / ISI)</div>
-                    <div className="h-12 bg-white/5 rounded-xl border border-white/5 flex items-center px-4">
+                    <div className="flex justify-between items-end mb-2">
+                        <div className="text-[10px] font-bold text-gray-600 uppercase">Output Pulse (Smearing / ISI)</div>
+                        <div className="text-[8px] font-black text-red-500 uppercase tracking-widest">Time Delay Spread ($\Delta\tau$)</div>
+                    </div>
+                    <div className="h-12 bg-white/5 rounded-xl border border-white/5 flex items-center px-4 relative">
+                        <div className="absolute left-2 text-[7px] text-gray-700 font-bold uppercase">Rx</div>
                         <div className="flex-1 h-2 relative">
                             {/* Smear visualization */}
                             <div
