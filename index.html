@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Communication Suite</title>
+</head>
+
+<body class="bg-black text-white">
+  <div id="root">
+    <div style="display: flex; justify-content: center; align-items: center; height: 100vh; font-family: sans-serif;">
+      <div id="loading-message">
+        <p style="text-align: center; color: #f97316; font-weight: bold;">Loading DIGI COM Suite...</p>
+        <p style="text-align: center; font-size: 12px; color: #4b5563;">If this stays blank, please check the browser
+          console.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.onerror = function (msg, url, line, col, error) {
+      var root = document.getElementById('root');
+      if (root) {
+        root.innerHTML = '<div style="padding: 20px; background: #991b1b; color: white; font-family: monospace;">' +
+          '<h1>Fatal JavaScript Error</h1>' +
+          '<p>' + msg + '</p>' +
+          '<small>' + url + ':' + line + '</small>' +
+          '</div>';
+      }
+      return false;
+    };
+  </script>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>
